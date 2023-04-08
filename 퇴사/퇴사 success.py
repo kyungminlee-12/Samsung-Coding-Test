@@ -25,17 +25,10 @@ for idx in range(N-1, -1, -1):
     if N < T+idx:
         res[idx] = max(res[idx + 1], res[idx])
     elif N == T+idx:
-        res[idx] = max(res[idx + 1], P)
+        res[idx] = max(res[idx + 1], P)                  # max(건너뜀, 지나감)
     else:
-        res[idx] = max(res[idx + 1], res[idx + T] + P)
-    """
-    else:
-        res[idx] = max(res[idx + 1], res[idx + T - 1] + P)
-  
-        res[idx] = max(res[idx+1], res[idx+T]+P)
-        if N > T+idx:
-            res[idx] = max(res[idx], res[idx+T]+P)
-            """
+        res[idx] = max(res[idx + 1], res[idx + T] + P)   # max(건너뜀, 지나감)
+
     # print(res[idx])
 print(res[0])
 
